@@ -14,7 +14,7 @@ function setup(){
   background(51);
 
 
-  socket = io.connect('75.64.127.144:3000')
+  socket = io.connect("https://mysterious-depths-46842.herokuapp.com/")
   socket.on('stream-out', renderStream)
   console.log("Connected!");
 
