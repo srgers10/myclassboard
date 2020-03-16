@@ -29,7 +29,12 @@ function setup(){
   chk_isTeacher = createCheckbox("Stream", false)
 }
 function draw() {
-  image(video, 0,0)
+  try{
+    image(video, 0,0)
+  }catch(err) {
+    console.error("Error: " + err);
+  }
+
   if(chk_isTeacher.checked())
     socket.emit('stream-in', canvas.elt.toDataURL('image/webp'));
 }
